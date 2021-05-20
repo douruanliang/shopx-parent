@@ -12,6 +12,9 @@
         <module>shopx-service</module>
         <module>shopx-service-api</module>
         <module>shopx-web</module>
+        <module>shopx-eureka</module>
+        <module>shopx-common</module>
+        <module>shopx-common-db</module>
     </modules>
 
     <packaging>pom</packaging>
