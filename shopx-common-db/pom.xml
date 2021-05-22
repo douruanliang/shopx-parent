@@ -12,7 +12,7 @@
     <artifactId>shopx-common-db</artifactId>
     <!--依赖-->
     <dependencies>
-        <!--对changgou-common的依赖-->
+        <!--对-common的依赖-->
         <dependency>
             <groupId>com.shopx</groupId>
             <artifactId>shopx-common</artifactId>
