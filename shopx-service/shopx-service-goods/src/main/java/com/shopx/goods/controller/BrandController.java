@@ -1,4 +1,4 @@
-package com.shopx.controller;
+package com.shopx.goods.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.shopx.goods.pojo.Brand;

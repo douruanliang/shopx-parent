@@ -1,9 +1,9 @@
-package com.shopx.service.impl;
+package com.shopx.goods.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.shopx.dao.BrandMapper;
+import com.shopx.goods.dao.BrandMapper;
 import com.shopx.goods.pojo.Brand;
-import com.shopx.service.BrandService;
+import com.shopx.goods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -67,20 +67,21 @@ public class BrandServiceImpl implements BrandService {
         return brands;
     }
 
+    /**
+     * 分页查询
+     * @param page
+     * @param size
+     * @return
+     */
     @Override
     public PageInfo<Brand> findPage(Integer page, Integer size) {
 
         //1.开始分页 紧跟着的[第一个查询 才会被分页]
         PageHelper.startPage(page, size);
-        //2.执行查询
+        //2.执行查询 - 查询集合
         List<Brand> brands = brandMapper.selectAll();
-        List<Brand> brands1111 = brandMapper.selectAll();
-
-        System.out.println(brands.size() + "::::::::brands1111:" + brands1111.size());
-
+        System.out.println(brands.size() + "::::::::brands:" + brands.size());
         //3.获取到结果集
-
-
         //4.封装pageinfo 返回
 
         return new PageInfo<Brand>(brands);

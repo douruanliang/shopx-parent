@@ -1,4 +1,4 @@
-package com.shopx.dao;
+package com.shopx.goods.dao;
 
 import com.shopx.goods.pojo.Brand;
 import tk.mybatis.mapper.common.Mapper;

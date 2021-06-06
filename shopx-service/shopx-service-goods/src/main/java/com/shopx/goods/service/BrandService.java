@@ -1,4 +1,4 @@
-package com.shopx.service;
+package com.shopx.goods.service;
 
 import com.github.pagehelper.PageInfo;
 import com.shopx.goods.pojo.Brand;
