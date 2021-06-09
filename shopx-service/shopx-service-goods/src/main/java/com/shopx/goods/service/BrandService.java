@@ -43,4 +43,11 @@ public interface BrandService {
      * @return
      */
     PageInfo<Brand> findPage(Integer page, Integer size, Brand brand);
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    List<Brand> findByCategory(Integer id);
 }

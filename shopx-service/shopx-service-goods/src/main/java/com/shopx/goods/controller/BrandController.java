@@ -120,6 +120,17 @@ public class BrandController {
     }
 
 
+    /**
+     *
+     * @return
+     */
+    @GetMapping("/category/{id}")
+    public Result<List<Brand>> findBrandByCategory(@PathVariable(name="id") Integer id){
+        List<Brand> brandList = brandService.findByCategory(id);
+
+        return new Result<List<Brand>>(true,StatusCode.OK,"查询品牌列表成功",brandList);
+
+    }
 
 
 }
