@@ -12,6 +12,13 @@ import java.util.List;
  *****/
 public interface ParaService {
 
+
+    /**
+     * 根据template_id 查询参数集合
+     * @param id
+     * @return
+     */
+    List<Para> findParaByCategoryId(Integer id);
     /***
      * Para多条件分页查询
      * @param para
