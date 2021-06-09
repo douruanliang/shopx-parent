@@ -10,8 +10,10 @@
         <module name="shopx-service-goods-api" />
         <module name="shopx-web" />
         <module name="shopx-common-db" />
+        <module name="shopx-service-file" />
         <module name="shopx-service-goods" />
         <module name="shopx-common" />
+        <module name="code-template" />
       </profile>
     </annotationProcessing>
   </component>
@@ -23,6 +25,7 @@
       <module name="shopx-gateway" options="-parameters" />
       <module name="shopx-service" options="-parameters" />
       <module name="shopx-service-api" options="-parameters" />
+      <module name="shopx-service-file" options="-parameters" />
       <module name="shopx-service-goods" options="-parameters" />
       <module name="shopx-service-goods-api" options="-parameters" />
       <module name="shopx-web" options="-parameters" />

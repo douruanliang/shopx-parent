@@ -14,6 +14,7 @@
     <description>各大微服务的父工程</description>
     <modules>
         <module>shopx-service-goods</module>
+        <module>shopx-service-file</module>
     </modules>
     <dependencies>
         <dependency>

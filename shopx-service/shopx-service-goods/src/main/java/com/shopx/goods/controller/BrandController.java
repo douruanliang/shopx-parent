@@ -2,7 +2,7 @@ package com.shopx.goods.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.shopx.goods.pojo.Brand;
-import com.shopx.service.BrandService;
+import com.shopx.goods.service.BrandService;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
