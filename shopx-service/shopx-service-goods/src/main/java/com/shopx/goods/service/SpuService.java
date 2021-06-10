@@ -86,6 +86,20 @@ public interface SpuService {
      */
     void pullSpu(Long id);
 
+    /***
+     * 商品上架
+     * @param spuId
+     */
+    void put(Long spuId);
+
+
+    /**
+     * 批量上架
+     * @param ids
+     * @return
+     */
+    int putMany(Long[] ids);
+
     void logicDeleteSpu(Long id);
 
 

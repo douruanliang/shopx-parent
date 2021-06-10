@@ -167,6 +167,28 @@ public class SpuController {
         return new Result(true, StatusCode.OK, "下架成功");
     }
 
+    /**
+     * 商品上架
+     * @param id
+     * @return
+     */
+    @PutMapping("/put/{id}")
+    public Result put(@PathVariable Long id){
+        spuService.put(id);
+        return new Result(true,StatusCode.OK,"上架成功");
+    }
+
+    /**
+     *  批量上架
+     * @param ids
+     * @return
+     */
+    @PutMapping("/put/many")
+    public Result putMany(@RequestBody Long[] ids){
+        int count = spuService.putMany(ids);
+        return new Result(true,StatusCode.OK,"上架"+count+"个商品");
+    }
+
     @DeleteMapping("/logic/delete/{id}")
     public Result logicDeleteSpu(@PathVariable(name = "id") Long id) {
         spuService.logicDeleteSpu(id);
