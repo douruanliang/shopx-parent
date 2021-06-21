@@ -6,29 +6,42 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shopx-web-search" />
         <module name="shopx-eureka" />
         <module name="shopx-service-goods-api" />
-        <module name="shopx-web" />
+        <module name="shopx-gateway-web" />
         <module name="shopx-common-db" />
         <module name="shopx-service-file" />
-        <module name="shopx-service-goods" />
-        <module name="shopx-common" />
         <module name="code-template" />
+        <module name="shopx-service-goods" />
+        <module name="shopx-service-search" />
+        <module name="shopx-common" />
+        <module name="shopx-service-content-api" />
+        <module name="shopx-service-search-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shopx-content-api" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="shopx-common" options="-parameters" />
       <module name="shopx-common-db" options="-parameters" />
+      <module name="shopx-content-api" options="-parameters" />
       <module name="shopx-eureka" options="-parameters" />
       <module name="shopx-gateway" options="-parameters" />
+      <module name="shopx-gateway-web" options="-parameters" />
       <module name="shopx-service" options="-parameters" />
       <module name="shopx-service-api" options="-parameters" />
+      <module name="shopx-service-content-api" options="-parameters" />
       <module name="shopx-service-file" options="-parameters" />
       <module name="shopx-service-goods" options="-parameters" />
       <module name="shopx-service-goods-api" options="-parameters" />
+      <module name="shopx-service-search" options="-parameters" />
+      <module name="shopx-service-search-api" options="-parameters" />
       <module name="shopx-web" options="-parameters" />
+      <module name="shopx-web-search" options="-parameters" />
     </option>
   </component>
 </project>

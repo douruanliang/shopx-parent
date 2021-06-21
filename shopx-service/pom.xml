@@ -15,6 +15,7 @@
     <modules>
         <module>shopx-service-goods</module>
         <module>shopx-service-file</module>
+        <module>shopx-service-search</module>
     </modules>
     <dependencies>
         <dependency>

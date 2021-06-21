@@ -13,6 +13,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>shopx-service-goods-api</module>
+        <module>shopx-content-api</module>
+        <module>shopx-service-content-api</module>
+        <module>shopx-service-search-api</module>
     </modules>
 
     <dependencies>

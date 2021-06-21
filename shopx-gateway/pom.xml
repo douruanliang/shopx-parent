@@ -11,6 +11,25 @@
 
     <artifactId>shopx-gateway</artifactId>
     <description>网关父工程</description>
+    <modules>
+        <module>shopx-gateway-web</module>
+    </modules>
     <packaging>pom</packaging>
+    <!--网关依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
