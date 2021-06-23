@@ -16,6 +16,7 @@
         <module>shopx-content-api</module>
         <module>shopx-service-content-api</module>
         <module>shopx-service-search-api</module>
+        <module>shopx-service-user-api</module>
     </modules>
 
     <dependencies>

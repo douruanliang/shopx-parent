@@ -6,18 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shopx-web-search" />
-        <module name="shopx-eureka" />
         <module name="shopx-service-goods-api" />
         <module name="shopx-gateway-web" />
+        <module name="shopx-eureka" />
         <module name="shopx-common-db" />
-        <module name="shopx-service-file" />
-        <module name="code-template" />
-        <module name="shopx-service-goods" />
-        <module name="shopx-service-search" />
         <module name="shopx-common" />
+        <module name="code-template" />
+        <module name="shopx-web-search" />
         <module name="shopx-service-content-api" />
+        <module name="shopx-service-user" />
         <module name="shopx-service-search-api" />
+        <module name="shopx-service-search" />
+        <module name="shopx-service-goods" />
+        <module name="shopx-service-user-api" />
+        <module name="shopx-service-file" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -40,6 +42,8 @@
       <module name="shopx-service-goods-api" options="-parameters" />
       <module name="shopx-service-search" options="-parameters" />
       <module name="shopx-service-search-api" options="-parameters" />
+      <module name="shopx-service-user" options="-parameters" />
+      <module name="shopx-service-user-api" options="-parameters" />
       <module name="shopx-web" options="-parameters" />
       <module name="shopx-web-search" options="-parameters" />
     </option>
