@@ -10,6 +10,7 @@ import entity.JwtUtil;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
@@ -117,7 +118,7 @@ public class UserController {
      * @param id
      * @return
      */
-    @GetMapping("/{id}")
+    @GetMapping({"/{id}","/load/{id}"})
     public Result<User> findById(@PathVariable String id) {
         //调用UserService实现根据主键查询User
         User user = userService.findById(id);
@@ -128,6 +129,7 @@ public class UserController {
      * 查询User全部数据
      * @return
      */
+    //@PreAuthorize("hasAnyRole('admin')")
     @GetMapping
     public Result<List<User>> findAll() {
         //调用UserService实现查询所有User
@@ -135,7 +137,7 @@ public class UserController {
         return new Result<List<User>>(true, StatusCode.OK, "查询成功", list);
     }
 
-    @RequestMapping("/login")
+   /* @RequestMapping("/login")
     public Result<User> login(String username, String password, HttpServletResponse response, HttpServletRequest request) {
         //1.从数据库中查询用户名对应的用户的对象
         User user = userService.findById(username);
@@ -154,23 +156,17 @@ public class UserController {
             info.put("username",username);
 
             //1.生成令牌
-            String jwt = JwtUtil.createJWT(UUID.randomUUID().toString(), JSON.toJSONString(info), null);
+            String jwt = JwtUtil.createJWT(UUID.randomUUID().toString(),
+                    JSON.toJSONString(info), null);
             //2.设置cookie中
             Cookie cookie = new Cookie("Authorization",jwt);
             response.addCookie(cookie);
             //3.设置头文件中
             response.setHeader("Authorization",jwt);
-
             return new Result<User>(true, StatusCode.OK, "成功",jwt);
         }else{
             //失败
             return new Result<User>(false, StatusCode.LOGINERROR, "用户名或密码错误");
         }
-
-
-
-
-
-
-    }
+    }*/
 }

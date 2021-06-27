@@ -14,11 +14,14 @@
         <module name="code-template" />
         <module name="shopx-web-search" />
         <module name="shopx-service-content-api" />
+        <module name="shopx-service-order-api" />
         <module name="shopx-service-user" />
         <module name="shopx-service-search-api" />
         <module name="shopx-service-search" />
         <module name="shopx-service-goods" />
         <module name="shopx-service-user-api" />
+        <module name="shopx-user-oauth" />
+        <module name="shopx-service-order" />
         <module name="shopx-service-file" />
       </profile>
     </annotationProcessing>
@@ -40,10 +43,13 @@
       <module name="shopx-service-file" options="-parameters" />
       <module name="shopx-service-goods" options="-parameters" />
       <module name="shopx-service-goods-api" options="-parameters" />
+      <module name="shopx-service-order" options="-parameters" />
+      <module name="shopx-service-order-api" options="-parameters" />
       <module name="shopx-service-search" options="-parameters" />
       <module name="shopx-service-search-api" options="-parameters" />
       <module name="shopx-service-user" options="-parameters" />
       <module name="shopx-service-user-api" options="-parameters" />
+      <module name="shopx-user-oauth" options="-parameters" />
       <module name="shopx-web" options="-parameters" />
       <module name="shopx-web-search" options="-parameters" />
     </option>

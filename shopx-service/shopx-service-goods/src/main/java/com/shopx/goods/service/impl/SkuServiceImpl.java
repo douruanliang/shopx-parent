@@ -72,7 +72,6 @@ public class SkuServiceImpl implements SkuService {
         return skuMapper.selectByExample(example);
     }
 
-
     /**
      * Sku构建查询对象
      *
@@ -173,7 +172,7 @@ public class SkuServiceImpl implements SkuService {
      * @param id
      */
     @Override
-    public void delete(String id) {
+    public void delete(Long id) {
         skuMapper.deleteByPrimaryKey(id);
     }
 
@@ -204,7 +203,7 @@ public class SkuServiceImpl implements SkuService {
      * @return
      */
     @Override
-    public Sku findById(String id) {
+    public Sku findById(Long id) {
         return skuMapper.selectByPrimaryKey(id);
     }
 
@@ -216,5 +215,12 @@ public class SkuServiceImpl implements SkuService {
     @Override
     public List<Sku> findAll() {
         return skuMapper.selectAll();
+    }
+
+    @Override
+    public List<Sku> findByStatus(String status) {
+        Sku condition = new Sku();
+        condition.setStatus(status);
+        return skuMapper.select(condition);
     }
 }

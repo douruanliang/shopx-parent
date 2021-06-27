@@ -83,7 +83,7 @@ public class SkuController {
     @ApiOperation(value = "Sku根据ID删除",notes = "根据ID删除Sku方法详情",tags = {"SkuController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "String")
     @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable String id){
+    public Result delete(@PathVariable Long id){
         //调用SkuService实现根据主键删除
         skuService.delete(id);
         return new Result(true,StatusCode.OK,"删除成功");
@@ -127,11 +127,12 @@ public class SkuController {
     @ApiOperation(value = "Sku根据ID查询",notes = "根据ID查询Sku方法详情",tags = {"SkuController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "String")
     @GetMapping("/{id}")
-    public Result<Sku> findById(@PathVariable String id){
+    public Result<Sku> findById(@PathVariable Long id){
         //调用SkuService实现根据主键查询Sku
         Sku sku = skuService.findById(id);
         return new Result<Sku>(true,StatusCode.OK,"查询成功",sku);
     }
+
 
     /***
      * 查询Sku全部数据

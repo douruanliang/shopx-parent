@@ -14,7 +14,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  */
 @SpringBootApplication
 @EnableEurekaClient
-//mapper扫描 用通用的ampper扫描器
+//mapper扫描 用通用的mapper扫描器
 @MapperScan("com.shopx.user.dao")
 public class UserApplication {
 

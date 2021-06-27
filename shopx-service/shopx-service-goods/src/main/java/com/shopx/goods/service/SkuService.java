@@ -1,12 +1,9 @@
 package com.shopx.goods.service;
-
-import com.github.pagehelper.PageInfo;
 import com.shopx.goods.pojo.Sku;
-
+import com.github.pagehelper.PageInfo;
 import java.util.List;
-
 /****
- * @Author:shenkunlin
+ * @Author:admin
  * @Description:Sku业务层接口
  * @Date 2019/6/14 0:16
  *****/
@@ -40,7 +37,7 @@ public interface SkuService {
      * 删除Sku
      * @param id
      */
-    void delete(String id);
+    void delete(Long id);
 
     /***
      * 修改Sku数据
@@ -59,11 +56,18 @@ public interface SkuService {
      * @param id
      * @return
      */
-     Sku findById(String id);
+    Sku findById(Long id);
 
     /***
      * 查询所有Sku
      * @return
      */
     List<Sku> findAll();
+
+    /**
+     * 查询符合条件的eSKU的列表数据
+     * @param status
+     * @return
+     */
+    List<Sku> findByStatus(String status);
 }
