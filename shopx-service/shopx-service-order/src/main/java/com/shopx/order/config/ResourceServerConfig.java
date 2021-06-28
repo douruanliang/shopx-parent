@@ -1,4 +1,4 @@
-package com.shopx.user.config;
+package com.shopx.order.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -85,10 +85,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
         //所有请求必须认证通过
         http.authorizeRequests()
-                //下边的路径放行
-                .antMatchers(
-                        "/user/add"). //配置地址放行
-                permitAll()
                 .anyRequest()
                 .authenticated();    //其他地址需要认证授权
     }

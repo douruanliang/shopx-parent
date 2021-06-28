@@ -9,15 +9,15 @@ import tk.mybatis.spring.annotation.MapperScan;
 /**
  * 描述
  *
- * @author www.itheima.com
+ * @author dourl
  * @version 1.0
- * @package com.changgou *
+ * @package com.shopx *
  * @since 1.0
  */
 @SpringBootApplication
 @EnableEurekaClient
-@MapperScan(basePackages = "com.changgou.order.dao")
-//@EnableFeignClients(basePackages = {"com.changgou.goods.feign"})
+@MapperScan(basePackages = "com.shopx.order.dao")
+@EnableFeignClients(basePackages = {"com.shopx.goods.feign"})
 public class OrderApplication {
 
     public static void main(String[] args) {
