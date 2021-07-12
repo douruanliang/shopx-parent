@@ -6,6 +6,7 @@ import com.github.pagehelper.PageInfo;
 import com.shopx.goods.dao.SkuMapper;
 import com.shopx.goods.pojo.Sku;
 import com.shopx.goods.service.SkuService;
+import com.shopx.order.pojo.OrderItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -222,5 +223,14 @@ public class SkuServiceImpl implements SkuService {
         Sku condition = new Sku();
         condition.setStatus(status);
         return skuMapper.select(condition);
+    }
+
+    @Override
+    public int derCount(OrderItem orderItem) {
+        int i = skuMapper.decrCount(orderItem);
+        if(i<=0){
+            throw new RuntimeException("减少库存失败");
+        }
+        return i;
     }
 }

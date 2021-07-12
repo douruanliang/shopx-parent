@@ -50,7 +50,6 @@ public class CartServiceImpl implements CartService {
         Sku data = skuResult.getData();
 
         if (data != null) {
-
             //2.根据sku的数据对象 获取 该SKU对应的SPU的数据
             Long spuId = data.getSpuId();
 

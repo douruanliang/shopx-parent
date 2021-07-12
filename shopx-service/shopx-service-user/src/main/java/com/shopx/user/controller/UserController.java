@@ -137,6 +137,15 @@ public class UserController {
         return new Result<List<User>>(true, StatusCode.OK, "查询成功", list);
     }
 
+
+    @GetMapping(value = "/points/add")
+    public Result addPoints(@RequestParam(value="points") Integer points
+            ,@RequestParam(value="username") String username ) {
+
+        userService.addPoints(points,username);
+        return new Result(true,StatusCode.OK,"添加积分成功");
+    }
+
    /* @RequestMapping("/login")
     public Result<User> login(String username, String password, HttpServletResponse response, HttpServletRequest request) {
         //1.从数据库中查询用户名对应的用户的对象
@@ -169,4 +178,6 @@ public class UserController {
             return new Result<User>(false, StatusCode.LOGINERROR, "用户名或密码错误");
         }
     }*/
+
+
 }

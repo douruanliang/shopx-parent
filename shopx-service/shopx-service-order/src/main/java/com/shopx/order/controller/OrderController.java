@@ -5,6 +5,7 @@ import com.shopx.order.pojo.Order;
 import com.shopx.order.service.OrderService;
 import entity.Result;
 import entity.StatusCode;
+import entity.TokenDecode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,8 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private TokenDecode tokenDecode;
     /***
      * Order分页条件搜索实现
      * @param order
@@ -98,6 +101,7 @@ public class OrderController {
     @PostMapping
     public Result add(@RequestBody   Order order){
         //调用OrderService实现添加Order
+        order.setUsername(tokenDecode.getUserInfo().get("username"));
         orderService.add(order);
         return new Result(true,StatusCode.OK,"添加成功");
     }

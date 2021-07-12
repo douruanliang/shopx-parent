@@ -11,6 +11,7 @@ import java.util.List;
  * @Date 2019/6/14 0:16
  *****/
 public interface AddressService {
+    List<Address> list(String username);
 
     /***
      * Address多条件分页查询

@@ -82,7 +82,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         //放行 用户注册的请求
         //其他的请求  必须有登录之后才能访问 (校验token合法才可以访问)
 
-
         //所有请求必须认证通过
         http.authorizeRequests()
                 //下边的路径放行

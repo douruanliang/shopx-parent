@@ -1,9 +1,7 @@
-package com.shopx.order.config;
+package entity;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -18,8 +16,7 @@ import java.util.Enumeration;
  * @package com.shopx.order.config *
  * @since 1.0
  */
-@Component
-public class TokenFeignInterceptor implements RequestInterceptor {
+public class FeignInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

@@ -1,10 +1,8 @@
-package com.shopx.order.config;
+package entity;
 
 import com.alibaba.fastjson.JSON;
-import entity.CacheKey;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.jwt.Jwt;
 import org.springframework.security.jwt.JwtHelper;
@@ -21,13 +19,11 @@ import java.util.stream.Collectors;
 /**
  * 描述
  *
- * @author www.itheima.com
+ * @author dourl
  * @version 1.0
- * @package com.changgou.order.config *
  * @since 1.0
  */
 
-@Component
 public class TokenDecode {
 
     private static final String PUBLIC_KEY = "public.key";

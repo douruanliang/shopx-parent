@@ -5,6 +5,7 @@ import com.shopx.user.pojo.Address;
 import com.shopx.user.service.AddressService;
 import entity.Result;
 import entity.StatusCode;
+import entity.TokenDecode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +24,9 @@ public class AddressController {
 
     @Autowired
     private AddressService addressService;
+
+    @Autowired
+    private TokenDecode tokenDecode;
 
     /***
      * Address分页条件搜索实现
@@ -123,5 +127,20 @@ public class AddressController {
         //调用AddressService实现查询所有Address
         List<Address> list = addressService.findAll();
         return new Result<List<Address>>(true, StatusCode.OK,"查询成功",list) ;
+    }
+
+    @RequestMapping("/user/list")
+    public Result<List<Address>> list() {
+
+        //获取当前登录的用户的信息
+        String username = tokenDecode.getUserInfo().get("username");
+
+        //调用服务层的方法 获取该用户的下的所有的地址列表
+        List<Address> addressList = addressService.list(username);
+
+        //返回
+        return new Result<List<Address>>(true, StatusCode.OK, "地址列表查询成功", addressList);
+
+
     }
 }

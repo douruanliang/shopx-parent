@@ -1,12 +1,14 @@
 package com.shopx.goods.feign;
 
 import com.shopx.goods.pojo.Sku;
+import com.shopx.order.pojo.OrderItem;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 描述
@@ -39,6 +41,15 @@ public interface SkuFeign {
 
     @GetMapping("/{id}")
     public Result<Sku> findById(@PathVariable(name="id") Long id);
+
+    /**
+     * 库存递减
+     * @param decrOrder
+     * @return
+     */
+    @PostMapping(value = "/decr/count")
+    public Result decrCount(@RequestBody OrderItem decrOrder);
+
 
 
 

@@ -7,6 +7,7 @@ import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -55,6 +56,13 @@ public class UserLoginController {
      */
     @RequestMapping("/login")
     public Result<Map> login(String username, String password) {
+
+        if(StringUtils.isEmpty(username)){
+            throw new RuntimeException("用户名不允许为空");
+        }
+        if(StringUtils.isEmpty(password)){
+            throw new RuntimeException("密码不允许为空");
+        }
         //登录 之后生成令牌的数据返回
         AuthToken authToken = loginService.login(username, password, clientId, clientSecret, GRAND_TYPE);
         //设置到cookie中

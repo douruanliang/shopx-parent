@@ -30,7 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     /****
      * 自定义授权认证
      * @param clientId
-     * @return  此方法会走两次 第一次是客户端查询 第二次是用信息
+     * @return  此方法会走两次 第一次是客户端查询 第二次是用户信息
      * @throws UsernameNotFoundException
      */
     @Override
@@ -53,7 +53,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             }
         }
         //===================客户端信息认证end
-        //===========clientId-userName========用户密码信息认证
+        //===========clientId->userName========用户密码信息认证
 
         if (StringUtils.isEmpty(clientId)) {
             return null;
@@ -68,7 +68,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserJwt userDetails = new UserJwt(clientId, pwd, AuthorityUtils.commaSeparatedStringToAuthorityList(permissions));
 
         //===================用户信息认证end
-        //userDetails.setComy(songsi);
         return userDetails;
     }
 }

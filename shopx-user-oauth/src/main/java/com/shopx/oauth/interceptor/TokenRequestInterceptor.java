@@ -19,7 +19,6 @@ import org.springframework.context.annotation.Configuration;
 public class TokenRequestInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        //取出令牌
         String adminToken = AdminToken.adminToken();
         requestTemplate.header("Authorization", "bearer " + adminToken);
     }

@@ -3,6 +3,7 @@ package com.shopx.goods.controller;
 import com.github.pagehelper.PageInfo;
 import com.shopx.goods.pojo.Sku;
 import com.shopx.goods.service.SkuService;
+import com.shopx.order.pojo.OrderItem;
 import entity.Result;
 import entity.StatusCode;
 import io.swagger.annotations.*;
@@ -24,6 +25,13 @@ public class SkuController {
 
     @Autowired
     private SkuService skuService;
+
+
+    @PostMapping(value = "/decr/count")
+    public Result decrCount(@RequestBody OrderItem orderItem){
+        skuService.derCount(orderItem);
+        return new Result(true,StatusCode.OK,"减少库存成功");
+    }
 
     /***
      * Sku分页条件搜索实现

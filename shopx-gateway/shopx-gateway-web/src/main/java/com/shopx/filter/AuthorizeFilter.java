@@ -28,8 +28,10 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
         ServerHttpRequest request = exchange.getRequest();
         //2.获取响应对象
         ServerHttpResponse response = exchange.getResponse();
-        //3.判断 是否为登录的URL 如果是 放行
-        if (request.getURI().getPath().startsWith("/api/user/login")) {
+        //3.判断 不需要认证的url 放行
+        String path = request.getURI().getPath();
+
+        if (path.startsWith("/api/user/login") || UrlFilter.hasAuthorize(path)) {
             return chain.filter(exchange);
         }
         //4.判断 是否为登录的URL 如果不是      权限校验

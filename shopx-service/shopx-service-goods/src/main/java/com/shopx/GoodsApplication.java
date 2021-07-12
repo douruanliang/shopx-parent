@@ -1,5 +1,6 @@
 package com.shopx;
 
+import entity.FeignInterceptor;
 import entity.IdWorker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,4 +23,8 @@ public class GoodsApplication {
         return new IdWorker(0,0);
     }
 
+    @Bean
+    public FeignInterceptor creatFeignInterceptor() {
+        return new FeignInterceptor();
+    }
 }

@@ -1,6 +1,8 @@
 package com.shopx.goods.service;
 import com.shopx.goods.pojo.Sku;
 import com.github.pagehelper.PageInfo;
+import com.shopx.order.pojo.OrderItem;
+
 import java.util.List;
 /****
  * @Author:admin
@@ -70,4 +72,12 @@ public interface SkuService {
      * @return
      */
     List<Sku> findByStatus(String status);
+
+
+    /**
+     * 要减少库的订单选项( 有要买的商品的ID 和要买的商品的数量)
+     * @param orderItem
+     * @return
+     */
+    int derCount(OrderItem orderItem);
 }
