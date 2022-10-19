@@ -54,8 +54,8 @@ class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         /*clients.inMemory()
-                .withClient("changgou")          //客户端id
-                .secret("changgou")                      //秘钥
+                .withClient("xx")          //客户端id
+                .secret("xx")                      //秘钥
                 .redirectUris("http://localhost")       //重定向地址
                 .accessTokenValiditySeconds(120)          //访问令牌有效期
                 .refreshTokenValiditySeconds(120)         //刷新令牌有效期
@@ -127,11 +127,11 @@ class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     public JwtAccessTokenConverter jwtAccessTokenConverter(CustomUserAuthenticationConverter customUserAuthenticationConverter) {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         KeyPair keyPair = new KeyStoreKeyFactory(
-                keyProperties.getKeyStore().getLocation(),                          //证书路径 changgou.jks
-                keyProperties.getKeyStore().getSecret().toCharArray())              //证书秘钥 changgouapp
+                keyProperties.getKeyStore().getLocation(),                          //证书路径
+                keyProperties.getKeyStore().getSecret().toCharArray())              //证书秘钥
                 .getKeyPair(
-                        keyProperties.getKeyStore().getAlias(),                     //证书别名 changgou
-                        keyProperties.getKeyStore().getPassword().toCharArray());   //证书密码 changgou
+                        keyProperties.getKeyStore().getAlias(),                     //证书别名
+                        keyProperties.getKeyStore().getPassword().toCharArray());   //证书密码
         converter.setKeyPair(keyPair);
         //配置自定义的CustomUserAuthenticationConverter
         DefaultAccessTokenConverter accessTokenConverter = (DefaultAccessTokenConverter) converter.getAccessTokenConverter();

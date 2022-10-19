@@ -1,6 +1,6 @@
 package com.shopx.oauth.controller;
 
-import com.shopx.oauth.service.LoginService;
+import com.shopx.oauth.service.AuthService;
 import com.shopx.oauth.util.AuthToken;
 import com.shopx.oauth.util.CookieUtil;
 import entity.Result;
@@ -20,7 +20,6 @@ import java.util.Map;
  * 描述
  *
  * @version 1.0
- * @package com.changgou.oauth.controller *
  * @since 1.0
  */
 @RestController
@@ -28,7 +27,7 @@ import java.util.Map;
 public class UserLoginController {
 
     @Autowired
-    private LoginService loginService;
+    private AuthService loginService;
 
     @Value("${auth.clientId}")
     private String clientId;
@@ -64,10 +63,13 @@ public class UserLoginController {
             throw new RuntimeException("密码不允许为空");
         }
         //登录 之后生成令牌的数据返回
-        AuthToken authToken = loginService.login(username, password, clientId, clientSecret, GRAND_TYPE);
+        AuthToken authToken = loginService.login(username, password, clientId, clientSecret,GRAND_TYPE);
         //设置到cookie中
         //saveCookie(authToken.getAccessToken());
-        return new Result<>(true, StatusCode.OK,"登录成功",authToken);
+        if (null!=authToken){
+            return new Result<>(true, StatusCode.OK,"登录成功",authToken);
+        }
+        return new Result<>(true, StatusCode.LOGINERROR,"登录失败");
     }
 
     private void saveCookie(String token){

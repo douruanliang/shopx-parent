@@ -2,7 +2,6 @@ package entity;
 
 /***
  *
- * @Author:www.itheima.com
  * @Description:itheima
  *
  ****/

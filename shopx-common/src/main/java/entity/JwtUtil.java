@@ -12,8 +12,7 @@ import java.util.Date;
 
 /**
  * 描述
- *
- * @author www.itheima.com
+ *  jwt
  * @version 1.0
  * @package entity *
  * @since 1.0
@@ -38,24 +37,19 @@ public class JwtUtil {
     public static String createJWT(String id, String subject, Long ttlMillis) {
         //指定算法
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
-
         //当前系统时间
         long nowMillis = System.currentTimeMillis();
         //令牌签发时间
         Date now = new Date(nowMillis);
-
         //如果令牌有效期为null，则默认设置有效期1小时
         if (ttlMillis == null) {
             ttlMillis = JwtUtil.JWT_TTL;
         }
-
         //令牌过期时间设置
         long expMillis = nowMillis + ttlMillis;
         Date expDate = new Date(expMillis);
-
         //生成秘钥
         SecretKey secretKey = generalKey();
-
         //封装Jwt令牌信息
         JwtBuilder builder = Jwts.builder()
                 .setId(id)                    //唯一的ID

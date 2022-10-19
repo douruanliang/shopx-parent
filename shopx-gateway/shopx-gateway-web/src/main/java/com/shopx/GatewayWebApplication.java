@@ -23,8 +23,8 @@ public class GatewayWebApplication {
     public static void main(String[] args) {
         SpringApplication.run(GatewayWebApplication.class,args);
     }
-
-    //创建一个ipKeyResolver 指定用户的IP
+     // IP 限流
+    //创建一个ipKeyResolver 指定用户的IP --用于计算某一个类型的限流的KEK 这里是IP
     @Bean(name="ipKeyResolver")
     public KeyResolver keyResolver(){
         return new KeyResolver() {
@@ -34,7 +34,6 @@ public class GatewayWebApplication {
                 ServerHttpRequest request = exchange.getRequest();
                 //2.从request中获取ip地址
                 String hostString = request.getRemoteAddress().getHostString();//Ip地址
-
                 //3.返回
                 return Mono.just(hostString);
             }

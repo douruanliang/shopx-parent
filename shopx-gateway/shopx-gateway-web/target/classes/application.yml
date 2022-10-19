@@ -24,20 +24,15 @@ spring:
               - Path=/api/goods/**,/api/brand/**,/api/categoryBrand**
               filters:
               - StripPrefix=1
-              # 局部限流过滤器
-            #- name: RequestRateLimiter #请求数限流 名字不能随便写 ，使用默认的facatory
-               # args:
-                  #key-resolver: "#{@ipKeyResolver}"
-                  # 每秒钟只允许有1个请求
-                  #redis-rate-limiter.replenishRate: 1
-                  # 允许并发有4哥请求【宽限的个数】
-                  #redis-rate-limiter.burstCapacity: 1
             #用户微服务
             - id: shopx_user_route
+              # lb: 使用LoadBalancerClient 实现负载均衡 + 微服务的名称
               uri: lb://user
+              #路由断言，路由规则配置
               predicates:
               - Path=/api/user/**,/api/user/login/*,/api/address/**,/api/areas/**,/api/cities/**,/api/provinces/**
               filters:
+              #将请求路径中的第一个路径去掉 请求路径以/区分，一个/代表一个路径
               - StripPrefix=1
             #订单微服务
             - id: shopx_order_route
@@ -46,11 +41,19 @@ spring:
               - Path=/api/cart/**,/api/categoryReport/**,/api/orderConfig/**,/api/order/**,/api/orderItem/**,/api/orderLog/**,/api/preferential/**,/api/returnCause/**,/api/returnOrder/**,/api/returnOrderItem/**
               filters:
               - StripPrefix=1
+                # 局部限流过滤器
+                #- name: RequestRateLimiter #请求数限流 名字不能随便写 ，使用默认的facatory
+                # args:
+                #key-resolver: "#{@ipKeyResolver}"
+                # 每秒钟只允许有1个请求
+                #redis-rate-limiter.replenishRate: 1
+                # 允许并发有4个请求【宽限的个数】
+                #redis-rate-limiter.burstCapacity: 4
   application:
     name: gateway-web
   #Redis配置
   redis:
-    host: 192.168.211.132
+    host: 127.0.0.1
     port: 6379
 
 server:
