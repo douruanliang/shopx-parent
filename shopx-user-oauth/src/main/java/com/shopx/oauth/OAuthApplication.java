@@ -2,6 +2,8 @@ package com.shopx.oauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -12,7 +14,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 /*****
  * @Date: 2019/7/6 8:01
  ****/
-@SpringBootApplication
+@SpringBootApplication(exclude={
+        RedisAutoConfiguration.class,
+        RedisRepositoriesAutoConfiguration.class
+})
 @EnableDiscoveryClient
 @MapperScan(basePackages = "com.shopx.oauth.dao")
 @EnableFeignClients(basePackages = {"com.shopx.user.feign"})

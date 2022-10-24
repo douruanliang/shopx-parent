@@ -9,6 +9,7 @@
         <module name="shopx-service-goods-api" />
         <module name="shopx-gateway-web" />
         <module name="shopx-eureka" />
+        <module name="shopx-service-manager" />
         <module name="shopx-common-db" />
         <module name="shopx-common" />
         <module name="code-template" />
@@ -19,7 +20,9 @@
         <module name="shopx-service-search-api" />
         <module name="shopx-service-search" />
         <module name="shopx-service-goods" />
+        <module name="shopx-service-manager-api" />
         <module name="shopx-service-user-api" />
+        <module name="shopx-web-manager" />
         <module name="shopx-user-oauth" />
         <module name="shopx-service-order" />
         <module name="shopx-service-file" />
@@ -43,6 +46,8 @@
       <module name="shopx-service-file" options="-parameters" />
       <module name="shopx-service-goods" options="-parameters" />
       <module name="shopx-service-goods-api" options="-parameters" />
+      <module name="shopx-service-manager" options="-parameters" />
+      <module name="shopx-service-manager-api" options="-parameters" />
       <module name="shopx-service-order" options="-parameters" />
       <module name="shopx-service-order-api" options="-parameters" />
       <module name="shopx-service-search" options="-parameters" />
@@ -51,6 +56,7 @@
       <module name="shopx-service-user-api" options="-parameters" />
       <module name="shopx-user-oauth" options="-parameters" />
       <module name="shopx-web" options="-parameters" />
+      <module name="shopx-web-manager" options="-parameters" />
       <module name="shopx-web-search" options="-parameters" />
     </option>
   </component>

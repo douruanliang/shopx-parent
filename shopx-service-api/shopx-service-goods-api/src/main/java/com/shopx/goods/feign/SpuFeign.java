@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 描述
- *
- * @author www.itheima.com
- * @version 1.0
- * @package com.changgou.goods.feign *
+
+ * @version 1.
  * @since 1.0
  */
 @FeignClient(value="goods")

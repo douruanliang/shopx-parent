@@ -1,4 +1,6 @@
 package com.shopx.search.controller;
+import com.shopx.search.feign.SkuFeign;
+import com.shopx.search.pojo.SkuInfo;
 import entity.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +24,7 @@ import java.util.Map;
 @RequestMapping("/search")
 public class SkuController {
 
-   /* @Autowired
+    @Autowired
     private SkuFeign skuFeign;
 
 
@@ -74,5 +76,5 @@ public class SkuController {
 
         }
         return url;
-    }*/
+    }
 }

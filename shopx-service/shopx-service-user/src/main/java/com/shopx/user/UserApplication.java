@@ -4,6 +4,8 @@ import entity.FeignInterceptor;
 import entity.TokenDecode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import tk.mybatis.spring.annotation.MapperScan;
@@ -15,7 +17,10 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @version 1.0
  * @since 1.0
  */
-@SpringBootApplication
+@SpringBootApplication(exclude={
+        RedisAutoConfiguration.class,
+        RedisRepositoriesAutoConfiguration.class
+})
 @EnableEurekaClient
 //mapper扫描 用通用的mapper扫描器
 @MapperScan("com.shopx.user.dao")

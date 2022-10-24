@@ -52,9 +52,9 @@ spring:
   application:
     name: gateway-web
   #Redis配置
-  redis:
-    host: 127.0.0.1
-    port: 6379
+    #redis:
+    #host: 127.0.0.1
+    # port: 6379
 
 server:
   port: 8001

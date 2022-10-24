@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/shopx-common-db/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-gateway/shopx-gateway-web/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service-api/shopx-service-content-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service-api/shopx-service-goods-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopx-service-api/shopx-service-manager-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service-api/shopx-service-order-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service-api/shopx-service-search-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service-api/shopx-service-search-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service-api/shopx-service-user-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-service-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-service-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service/shopx-service-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service/shopx-service-goods/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopx-service/shopx-service-manager/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service/shopx-service-order/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service/shopx-service-order/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service/shopx-service-search/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-service/shopx-service-user/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-user-oauth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopx-web/shopx-web-manager/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shopx-web/shopx-web-search/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-web/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shopx-web/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>

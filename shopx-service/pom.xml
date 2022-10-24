@@ -18,6 +18,7 @@
         <module>shopx-service-search</module>
         <module>shopx-service-user</module>
         <module>shopx-service-order</module>
+        <module>shopx-service-manager</module>
     </modules>
     <dependencies>
         <dependency>

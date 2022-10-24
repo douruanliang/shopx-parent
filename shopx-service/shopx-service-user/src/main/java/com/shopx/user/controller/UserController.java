@@ -129,7 +129,7 @@ public class UserController {
      * 查询User全部数据
      * @return
      */
-    //@PreAuthorize("hasAnyRole('admin')")
+    @PreAuthorize("hasAnyRole('admin')")
     @GetMapping
     public Result<List<User>> findAll() {
         //调用UserService实现查询所有User

@@ -17,13 +17,14 @@
         <module>shopx-service-search-api</module>
         <module>shopx-service-user-api</module>
         <module>shopx-service-order-api</module>
+        <module>shopx-service-manager-api</module>
     </modules>
 
     <dependencies>
         <!--通用的common  要有feign的依赖-->
         <dependency>
             <groupId>com.shopx</groupId>
-            <artifactId>shopx-common</artifactId>
+            <artifactId>shopx-common-db</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

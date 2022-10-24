@@ -62,12 +62,18 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .httpBasic()        //启用Http基本身份验证
+        http.csrf().disable();
+        http.formLogin()    //启用表单身份验证 登录页面
+                .loginPage("/oauth/formLogin")
+                .loginProcessingUrl("/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/")
+                .failureUrl("/oauth/login")
                 .and()
-                .formLogin()       //启用表单身份验证
-                .and()
-                .authorizeRequests()    //限制基于Request请求访问
+                .authorizeRequests()
+                .antMatchers("/oauth/formLogin", "/login", "/resources/**", "/static/**")
+                .permitAll()
                 .anyRequest()
                 .authenticated();       //其他请求都需要经过验证
 

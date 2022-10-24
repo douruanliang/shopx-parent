@@ -24,7 +24,8 @@ import java.util.stream.Collectors;
 @Configuration
 // 开启 资源服务器(标识他是一个oauth2中的资源服务器)
 @EnableResourceServer
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)//激活方法上的PreAuthorize注解
+// 全局方法校验 - //激活方法上的PreAuthorize注解
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     //公钥

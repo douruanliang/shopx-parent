@@ -18,7 +18,7 @@ import java.util.Map;
 
 /**
  * 描述
- *
+ * 密码认证控制类
  * @version 1.0
  * @since 1.0
  */
